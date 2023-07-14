@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>VIDEO GALLARY</h1>
+        <div class="row">
+            <div class="col">
+                <div class="feature-img">
+                    <img src="image.jpg" width="100%">
+                    <img src="playbtn.png" class="play-btn" onclick="playVideo('2.mp4')">
+                </div>
+            </div>
+            <div class="col">
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="image1.jpg">
+                        <img src="playbtn.png" class="play-btn" onclick="playVideo('3.mp4')">
+                    </div>
+                    <p>How to add multiple videos in a website <br>or to make a video gallery</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="image2.jpg">
+                        <img src="playbtn.png" class="play-btn" onclick="playVideo('4.mp4')">
+                    </div>
+                    <p>How to add multiple videos in a website <br>or to make a video gallery</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="image3.jpg">
+                        <img src="playbtn.png" class="play-btn" onclick="playVideo('1.mp4')">
+                    </div>
+                    <p>How to add multiple videos in a website <br>or to make a video gallery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-player" id="videoPlayer">
+        <video width="100%" controls autoplay id="myvideo">
+            <source src="1.mp4" type="video/mp4">
+        </video>
+        <img src="close.png" class="close-btn" onclick="stopVideo()">
+    </div>
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myvideo = document.getElementById("myvideo");
+        function stopVideo() {
+            videoPlayer.style.display = "none";
+        }
+        function playVideo(file) {
+            myvideo.src = file;
+            videoPlayer.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
